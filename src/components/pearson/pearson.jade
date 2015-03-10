@@ -1,0 +1,16 @@
+fa(name="circle-o-notch", size="large", spin, ng-if="vm.searching")
+div.text-center
+  div(ng-repeat="item in vm.items").col-xs-12
+    h2.text-muted
+      strong {{ item.headword }}&nbsp;
+      span(ng-repeat="ipa in item.pronunciations | map: 'ipa' ")
+        / {{ ipa }} /
+      small: small: mark {{ item.part_of_speech }}
+    div(ng-repeat="sense in item.senses")
+      p.lead
+        {{ sense.definition[0] }}
+      div(ng-repeat="translation in sense.translations")
+        p.example(ng-repeat="example in translation.example")
+          mark.text-primary {{ translation.text | join: ', ' }}
+          strong{{ example.text }}
+          span {{ example.translation.text[0] }}

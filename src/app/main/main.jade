@@ -1,17 +1,19 @@
 .container(ng-controller='MainCtrl as mvm')
   .page-header.text-center
     h1.text-primary word Up!
-  .well
-    .row
-      .col-xs-8.col-xs-offset-2.col-md-4.col-md-offset-4
-        input(type='text'
-          class='form-control input-lg'
-          ng-model='mvm.word'
-          ng-model-options='{ debounce: 500 }')
-    .row
-      h2.text-center.text-muted(ng-if='mvm.word')
-        / {{ mvm.word }} /
-  hr
-
   .row
-    forvo(word="mvm.word")
+    .col-xs-8.col-xs-offset-2.col-md-4.col-md-offset-4
+      input(type='text'
+        class='form-control input-lg'
+        placeholder="Introduce una palabra..."
+        ng-model='mvm.word'
+        ng-model-options='{ debounce: 500 }')
+
+  div(ng-if="mvm.word")
+    hr
+    .well.well-sm
+      .row
+        pearson(word="mvm.word")
+    hr
+    .row
+      forvo(word="mvm.word")

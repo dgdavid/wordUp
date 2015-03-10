@@ -1,0 +1,7 @@
+p.lead
+  {{ sense.definition[0] }}
+div(ng-repeat="translation in sense.translations")
+  p.example(ng-repeat="example in translation.example")
+    mark.text-primary {{ translation.text | join: ', ' }}
+    strong{{ example.text }}
+    span {{ example.translation.text[0] }}
