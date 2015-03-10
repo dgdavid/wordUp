@@ -11,7 +11,7 @@ angular.module('wordUp', [
       key: 'forvoApiKey'
     }
   })
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, $sceDelegateProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'app/main/main.html',
@@ -20,6 +20,8 @@ angular.module('wordUp', [
       .otherwise({
         redirectTo: '/'
       });
+    $sceDelegateProvider
+      .resourceUrlWhitelist(['self', new RegExp('^(http[s]?):\/\/(apifree.)?forvo\.com/.+$')]);
   })
 ;
 
