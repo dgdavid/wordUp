@@ -5,6 +5,12 @@ angular.module('wordUp', [
   'angularMoment', 'angular-lodash', 'picardy.fontawesome', 'iso-3166-country-codes',
   'wordUp.forvo'
   ])
+  .constant('TP_SERVICES', {
+    forvo: {
+      baseUrl: 'http://apifree.forvo.com/action/word-pronunciations/format/json/word/',
+      key: 'forvoApiKey'
+    }
+  })
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -16,3 +22,6 @@ angular.module('wordUp', [
       });
   })
 ;
+
+angular.module('wordUp.forvo', []);
+
