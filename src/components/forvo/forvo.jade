@@ -1,0 +1,23 @@
+h3.text-center.text.warning forvo
+p(ng-if="vm.items.length == 0").lead.text-center.text-warning.
+  No se encontraron resultados
+div(ng-if="vm.items.length > 1")
+  div.row
+    .well.col-xs-12: form
+      div.form-group.col-xs-8
+        label Ordenar por
+        select.form-control(
+          ng-model="vm.orderBy"
+          ng-options="sort.caption for sort in vm.sortOrders track by sort.predicate"
+        )
+      div.form-group.col-xs-4
+        label En sentido
+        select.form-control(
+          ng-model="vm.orderDirection"
+          ng-options="order.caption for order in vm.sortDirections track by order.value"
+        )
+  div.row
+  forvo-item(
+    ng-repeat="item in vm.items | orderBy : vm.orderBy.predicate : vm.orderDirection.value"
+    item="item"
+    ).col-xs-6

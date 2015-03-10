@@ -1,0 +1,24 @@
+div.panel.panel-default
+  div.panel-heading
+    span.label(ng-class="'label-' + vm.user.sex")
+      fa(name='{{ vm.user.sex }}', size="2")
+    span.label.label-icon
+      span.flag-icon(
+        ng-class="'flag-icon-' + vm.country.code | lowercase"
+        ng-attr-title="{{ vm.country.name }}"
+      )
+      {{ vm.country.code }}
+    strong.text-primary {{ vm.user.name }}
+    div.pull-right
+      small.label
+        strong.text-success {{ vm.votes.positives }}
+        strong.text-muted /
+        strong.text-info {{ vm.votes.total }}
+      strong.label(ng-class="vm.votes.rating > 0 ? 'label-info' : 'label-danger'")
+        {{ vm.votes.rating }}
+  div.panel-body
+    audio(preload="none", controls)
+      source(ng-repeat="source in vm.item.sources", ng-src="{{ source }}")
+  hr.compact
+  p.panel-body-footnote.text-muted.text-right
+    small Añadido el {{ vm.item.addedAt | date: 'dd/mm/yyyy hh:mm' }}

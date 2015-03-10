@@ -1,0 +1,32 @@
+hr.compact {
+  margin: 5px 0;
+}
+
+.label-female {
+  background: PaleVioletRed;
+}
+.label-male {
+  background: CadetBlue;
+}
+
+.label-female,
+.label-male {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.label-icon {
+  background: lightGrey;
+  font-size: 1em;
+  margin: 0 2px;
+  .flag-icon {
+    line-height: inherit;
+    background-position: inherit;
+    width: 1.5em;
+  }
+}
+
+p.panel-body-footnote {
+  padding: 2px 4px;
+}
+
