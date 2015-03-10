@@ -3,6 +3,7 @@
 angular.module('wordUp', [
   'ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngRoute', 'mgcrea.ngStrap',
   'angularMoment', 'angular-lodash', 'picardy.fontawesome', 'iso-3166-country-codes',
+  'angular.filter',
   'wordUp.forvo'
   ])
   .constant('TP_SERVICES', {
