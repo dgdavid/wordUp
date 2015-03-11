@@ -12,5 +12,20 @@
     width: 50px;
   }
 }
+
+.service-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  overflow: hidden;
+  display: block;
+}
+
+small.service-source {
+  color: #aaa;
+  position: absolute;
+  right: 15px;
+  top: 5px;
+}
 // injector
 // endinjector
