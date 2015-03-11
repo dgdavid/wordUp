@@ -9,7 +9,7 @@ angular.module('wordUp', [
   .constant('TP_SERVICES', {
     forvo: {
       baseUrl: 'http://apifree.forvo.com/action/word-pronunciations/format/json/word/',
-      key: 'forvoApiKey'
+       key: 'forvoApiKey'
     },
     pearson : {
       baseUrl: 'https://api.pearson.com:443/v2/dictionaries/laes/entries',
